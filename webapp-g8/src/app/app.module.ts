@@ -14,6 +14,7 @@ import { LimpiezaC1Dev4Component } from './Component/limpieza-c1-dev4/limpieza-c
 import { ReservaRestaurantC2Dev4Component } from './Component/reserva-restaurant-c2-dev4/reserva-restaurant-c2-dev4.component';
 import { SolicitarValetC3Dev4Component } from './Component/solicitar-valet-c3-dev4/solicitar-valet-c3-dev4.component';
 import { PagoOnlineComponent } from './Component/pago-online/pago-online.component';
+import { CotizacionComponent } from './Component/cotizacion/cotizacion.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +29,20 @@ import { PagoOnlineComponent } from './Component/pago-online/pago-online.compone
     ReservaRestaurantC2Dev4Component,
     SolicitarValetC3Dev4Component,
     RegistroUsuarioComponent,
-    PagoOnlineComponent
+    PagoOnlineComponent,
+    CotizacionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+
+    BrowserAnimationsModule,
+
+    MatTableModule,
+    MatInputModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
