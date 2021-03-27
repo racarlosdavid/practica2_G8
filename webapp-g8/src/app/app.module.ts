@@ -9,15 +9,17 @@ import { RegistroReservacionComponent } from './Component/registro-reservacion/r
 import { RegistroHabitacionComponent } from './Component/registro-habitacion/registro-habitacion.component';
 import { Logindev2Component } from './Component/logindev2/logindev2.component';
 import { RecuperarContraseniaComponent } from './Component/recuperar-contrasenia/recuperar-contrasenia.component';
+import { RegistroUsuarioComponent } from './Component/registro-usuario/registro-usuario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistroReservacionComponent,
     RegistroHabitacionComponent,
-    Logindev2Component
+    Logindev2Component,
     AppComponent,
-    RecuperarContraseniaComponent
+    RecuperarContraseniaComponent,
+    RegistroUsuarioComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import { RegistroReservacionComponent } from './Component/registro-reservacion/r
 import { RegistroHabitacionComponent } from './Component/registro-habitacion/registro-habitacion.component'
 import { Logindev2Component } from './Component/logindev2/logindev2.component';
 import { RecuperarContraseniaComponent } from './Component/recuperar-contrasenia/recuperar-contrasenia.component';
+import { RegistroUsuarioComponent } from './Component/registro-usuario/registro-usuario.component';
 
 const routes: Routes = [
   /*{
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'recuperarContrasenia',
     component : RecuperarContraseniaComponent
+  },
+  {
+    path: 'registrarUsuario',
+    component : RegistroUsuarioComponent
   }
 ];
 @NgModule({
