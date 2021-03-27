@@ -12,6 +12,7 @@ import { PagoOnlineComponent } from './Component/pago-online/pago-online.compone
 import { CotizacionComponent } from './Component/cotizacion/cotizacion.component';
 import { AdministradorComponent } from './Component/administrador/administrador.component';
 import { UsuarioComponent } from './Component/usuario/usuario.component';
+import { EditarUsuarioComponent } from './Component/editar-usuario/editar-usuario.component';
 
 
 const routes: Routes = [
@@ -66,6 +67,9 @@ const routes: Routes = [
   },
   { path: 'userpg', 
     component: UsuarioComponent
+  },
+  { path: 'editarUsuario', 
+    component: EditarUsuarioComponent
   }
 ];
 @NgModule({

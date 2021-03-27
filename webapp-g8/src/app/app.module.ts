@@ -21,6 +21,7 @@ import { PagoOnlineComponent } from './Component/pago-online/pago-online.compone
 import { CotizacionComponent } from './Component/cotizacion/cotizacion.component';
 import { AdministradorComponent } from './Component/administrador/administrador.component';
 import { UsuarioComponent } from './Component/usuario/usuario.component';
+import { EditarUsuarioComponent } from './Component/editar-usuario/editar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { UsuarioComponent } from './Component/usuario/usuario.component';
     PagoOnlineComponent,
     CotizacionComponent,
     AdministradorComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    EditarUsuarioComponent
   ],
   imports: [
     BrowserModule,
