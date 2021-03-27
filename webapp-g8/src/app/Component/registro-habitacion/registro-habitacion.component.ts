@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Habitacion } from '../../models/Habitacion.model'
 
 @Component({
   selector: 'app-registro-habitacion',
@@ -15,17 +16,17 @@ export class RegistroHabitacionComponent implements OnInit {
     piso_habitacion: 0,
     precio_habitacion:0.0
   }
-  HABITACIONES: any = 
-  [
-  {numero:0,nombre:"habitacion1"},
-  {numero:12,nombre:"habitacion12"},
-  {numero:34,nombre:"habitacion34"}
-  ];
+  HABITACIONES: any = [];
   constructor() { }
 
   ngOnInit(): void {
   }
   insertarHabitacion() {
+    let auxhabit = new Habitacion(this.HABITACION.tipo_habitacion,this.HABITACION.caracteristicas,this.HABITACION.estado
+      ,this.HABITACION.numero_habitacion,this.HABITACION.piso_habitacion,this.HABITACION.precio_habitacion);
+    if(auxhabit.verificarcampos()){
+      this.HABITACIONES.push(auxhabit);
+    }
   }
 
 }
