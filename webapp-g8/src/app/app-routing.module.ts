@@ -6,6 +6,7 @@ import { Logindev2Component } from './Component/logindev2/logindev2.component';
 import { RecuperarContraseniaComponent } from './Component/recuperar-contrasenia/recuperar-contrasenia.component';
 import { RegistroUsuarioComponent } from './Component/registro-usuario/registro-usuario.component';
 import { LimpiezaC1Dev4Component } from './Component/limpieza-c1-dev4/limpieza-c1-dev4.component'
+import { ReservaRestaurantC2Dev4Component } from './Component/reserva-restaurant-c2-dev4/reserva-restaurant-c2-dev4.component';
 
 const routes: Routes = [
   /*{
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path:'limpieza',
     component: LimpiezaC1Dev4Component
+  },
+  {
+    path:'reservaRestaurant',
+    component: ReservaRestaurantC2Dev4Component
   }
 ];
 @NgModule({

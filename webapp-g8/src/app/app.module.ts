@@ -11,6 +11,7 @@ import { Logindev2Component } from './Component/logindev2/logindev2.component';
 import { RecuperarContraseniaComponent } from './Component/recuperar-contrasenia/recuperar-contrasenia.component';
 import { RegistroUsuarioComponent } from './Component/registro-usuario/registro-usuario.component';
 import { LimpiezaC1Dev4Component } from './Component/limpieza-c1-dev4/limpieza-c1-dev4.component';
+import { ReservaRestaurantC2Dev4Component } from './Component/reserva-restaurant-c2-dev4/reserva-restaurant-c2-dev4.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LimpiezaC1Dev4Component } from './Component/limpieza-c1-dev4/limpieza-c
     AppComponent,
     RecuperarContraseniaComponent,
     RegistroUsuarioComponent,
-    LimpiezaC1Dev4Component
+    LimpiezaC1Dev4Component,
+    ReservaRestaurantC2Dev4Component
   ],
   imports: [
     BrowserModule,
