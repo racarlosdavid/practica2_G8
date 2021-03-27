@@ -8,14 +8,13 @@ import { user } from '../../models/user';
 })
 export class RegistroUsuarioComponent implements OnInit {
 
-  usuario: user = {
-                
+  usuario: user = {        
     cui : null,              
     nombre : '',          
     apellido : '',         
     fecha_nacimiento : null,
     correo : '',
-    contrasenia : '',      
+    contrasenia : ''
   };
 
   constructor() { }
