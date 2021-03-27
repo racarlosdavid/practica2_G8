@@ -64,7 +64,7 @@
                     <div class="container" style="margin-top: 10;">
                         <div class="d-flex">
                             <label for="floatingTextarea" ><i class="fas fa-envelope" style="font-size: 40px;"></i></label>
-                            <input class="form-control me-2" type="search" placeholder="Correo electrónico" style="margin-left: 10px;" aria-label="Search">
+                            <input #email class="form-control me-2" type="search" placeholder="Correo electrónico" style="margin-left: 10px;" aria-label="Search">
                         </div>
                     </div>
 
@@ -72,26 +72,28 @@
                     <div class="container" style="margin-top: 10;">
                         <div class="d-flex">
                             <label for="floatingTextarea" ><i class="fas fa-lock" style="font-size: 40px;"></i></label>
-                            <input class="form-control me-2" type="search" placeholder="Contraseña" style="margin-left: 15px;" aria-label="Search">
+                            <input #contra class="form-control me-2" type="search" placeholder="Contraseña" style="margin-left: 15px;" aria-label="Search">
                         </div>
                     </div>
 
                     <ul style="margin-top: 40px;"><h1> </h1></ul>
                     <div class="d-flex flex-row justify-content-center alig-items-center">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Tipo de usuario</option>
+                        <label for="floatingTextarea" style="margin-left: 75px;"></label>
+                        <select class="form-select" aria-label="Default select example" [(ngModel)]="opselected" (change)="Capturatipo()">
+                            <option value="0">Tipo de usuario</option>
                             <option value="1">Cliente</option>
                             <option value="2">Administrador</option>
-                        </select>
+                        </select>      
+                        <label for="floatingTextarea" style="margin-left: 35px;"></label>                  
                     </div>
                     <ul style="margin-top: 40px;"><h1> </h1></ul>
 
                     <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-primary" type="button">Ingresar</button>                        
+                        <button class="btn btn-primary" type="button" (click)="Capturadatos(email, contra)">Ingresar</button>                        
                     </div>
                     <ul style="margin-top: 10px;"><h1> </h1></ul>
                     <div class="d-flex flex-row justify-content-center alig-items-center">
-                        <a routerLink="/recuperarContrasenia">¿Has olvidado la contraseña?</a>
+                        <a routerLink="/screen2">¿Has olvidado la contraseña?</a>
                     </div>
 
                     <ul style="margin-top:30px;"><h1> </h1></ul>
