@@ -1,0 +1,18 @@
+.contenedor{
+    margin-top: 50px;
+    margin-left: 350px;
+    margin-right: 350px;
+}
+.formulario{
+    background: #c4c4c4;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.formulario h4{
+    color: #fff;
+    padding-top: 20px;
+}
+.formulario .btn{
+    margin: 10px;
+}
