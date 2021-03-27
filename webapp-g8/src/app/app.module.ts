@@ -5,10 +5,12 @@ import {FormsModule}from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { RegistroReservacionComponent } from './Component/registro-reservacion/registro-reservacion.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RegistroReservacionComponent
   ],
   imports: [
     BrowserModule,
