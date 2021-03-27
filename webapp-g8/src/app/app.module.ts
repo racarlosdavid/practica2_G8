@@ -22,6 +22,7 @@ import { CotizacionComponent } from './Component/cotizacion/cotizacion.component
 import { AdministradorComponent } from './Component/administrador/administrador.component';
 import { UsuarioComponent } from './Component/usuario/usuario.component';
 import { EditarUsuarioComponent } from './Component/editar-usuario/editar-usuario.component';
+import { ServicioHabitacionComponent } from './Component/servicio-habitacion/servicio-habitacion.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { EditarUsuarioComponent } from './Component/editar-usuario/editar-usuari
     CotizacionComponent,
     AdministradorComponent,
     UsuarioComponent,
-    EditarUsuarioComponent
+    EditarUsuarioComponent,
+    ServicioHabitacionComponent
   ],
   imports: [
     BrowserModule,
