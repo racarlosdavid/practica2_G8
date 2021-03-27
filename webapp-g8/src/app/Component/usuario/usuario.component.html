@@ -1,0 +1,227 @@
+<router-outlet></router-outlet>
+
+<router-outlet></router-outlet>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!--Título principal-->
+            <a class="navbar-brand" style="margin-right: 400px;"><i class="fas fa-plane fa-3x"></i></a>
+            <a class="navbar-brand" href="/" style="font-size: 80px;">MyProfile</a>
+
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                </ul>
+                <form class="d-flex">
+                <button class="btn btn-outline-success btn-lg" type="submit">Cerrar sesión</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!--Botones de control-->
+    <div class="container-fluid">
+        <div class="row bg-dark text-white p-3">
+            <!--Grupo de botones-->
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary" data-toggle="dropdown">
+                    <i class="fa fa-tasks"></i> Pagos <span class="caret"></span>
+                </button>  
+                <button type="button" class="btn btn-light" data-toggle="dropdown">
+                    <i class="fa fa-lightbulb"></i> Beneficios <span class="caret"></span>
+                </button>          
+                <button type="button" class="btn btn-secondary" data-toggle="dropdown">
+                    <i class="fa fa-envelope"></i> Bandeja de entrada <span class="caret"></span>
+                </button>  
+                <button type="button" class="btn btn-light" data-toggle="dropdown">
+                    <i class="fa fa-question-circle"></i>Ayuda <span class="caret"></span>
+                </button>    
+            </div>
+        </div>        
+    </div>
+
+    <!--Espaciado-->
+    <ul style="margin-top: 40px;">
+        <h1> </h1>
+    </ul>
+
+    
+
+    <!--Sección para el contenido principal class="row bg-dark text-white p-3 text-center" -->
+    <div class="container-fluid">
+        <div  class="row p-3 mb-2 ">
+            <div class="row bg-light" style="margin-left: 2px;">
+
+                <!--Contenedor primera columna-->
+                <nav class="col-sm-6 p-5" id="check1">         
+                    <!--Contenedora de objetos-->   
+                    <div class="container" style="margin-top: 10;">
+                        <div class="d-flex flex-row justify-content-center alig-items-center">
+                            <label for="floatingTextarea" style="font-size: 50px;"><i class="fas fa-user-edit"> Datos personales</i></label>
+                        </div>
+
+                        <ul style="margin-top: 40px;"><h1> </h1></ul>
+                        <div class="container" style="margin-top: 10;">
+                            <div class="d-flex">
+                                <label for="floatingTextarea" ><i class="fas fa-user-circle" style="font-size: 40px;"></i></label>
+                                <input #email class="form-control me-2" type="search" placeholder="Nombre" style="margin-left: 10px;" aria-label="Search">
+                            </div>
+                        </div>
+
+                        <ul style="margin-top: 40px;"><h1> </h1></ul>
+                        <div class="container" style="margin-top: 10;">
+                            <div class="d-flex">
+                                <label for="floatingTextarea" ><i class="fas fa-smile" style="font-size: 40px;"></i></label>
+                                <input #email class="form-control me-2" type="search" placeholder="Usuario" style="margin-left: 10px;" aria-label="Search">
+                            </div>
+                        </div>
+
+                        <ul style="margin-top: 40px;"><h1> </h1></ul>
+                        <div class="container" style="margin-top: 10;">
+                            <div class="d-flex">
+                                <label for="floatingTextarea" ><i class="fas fa-envelope" style="font-size: 40px;"></i></label>
+                                <input #email class="form-control me-2" type="search" placeholder="Correo electrónico" style="margin-left: 10px;" aria-label="Search">
+                            </div>
+                        </div>
+
+                        <ul style="margin-top: 40px;"><h1> </h1></ul>
+                        <div class="container" style="margin-top: 10;">
+                            <div class="d-flex">
+                                <label for="floatingTextarea" ><i class="fas fa-calendar-alt" style="font-size: 40px;"></i></label>
+                                <input #email class="form-control me-2" type="date" placeholder="Fecha de nacimiento" style="margin-left: 10px;" aria-label="Search">
+                            </div>
+                        </div>
+
+                        <ul style="margin-top: 40px;"><h1> </h1></ul>
+                        <div class="container" style="margin-top: 10;">
+                            <div class="d-flex">
+                                <label for="floatingTextarea" ><i class="fas fa-phone" style="font-size: 40px;"></i></label>
+                                <input #email class="form-control me-2" type="search" placeholder="Teléfono" style="margin-left: 10px;" aria-label="Search">
+                            </div>
+                        </div>
+
+                        <ul style="margin-top: 40px;"><h1> </h1></ul>
+                        <div class="container" style="margin-top: 10;">
+                            <div class="d-flex">
+                                <label for="floatingTextarea" ><i class="fas fa-lock-open" style="font-size: 40px;"></i></label>
+                                <input #email class="form-control me-2" type="password" placeholder="Contraseña" style="margin-left: 10px;" aria-label="Search">
+                            </div>
+                        </div>
+
+                        <ul style="margin-top: 40px;"><h1> </h1></ul>
+                        <div class="container" style="margin-top: 10;">
+                            <div class="d-flex">
+                                <label for="floatingTextarea" ><i class="fas fa-lock" style="font-size: 40px;"></i></label>
+                                <input #email class="form-control me-2" type="password" placeholder="Confirmar contraseña" style="margin-left: 10px;" aria-label="Search">
+                            </div>
+                        </div>
+
+                        <ul style="margin-top:30px;"><h1> </h1></ul>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button class="btn btn-success" type="button">Guardar cambios</button>
+                        </div>
+                        <ul></ul>
+                    </div>
+                </nav>
+                <!--Contenedor segunda columna-->
+                <nav class="col-sm-6 p-5 "  id="check1">      
+                    <div class="container-fluid">
+                        <div class="d-flex flex-row justify-content-center alig-items-center">
+                            <label for="floatingTextarea" style="font-size: 50px;"><i class="fas fa-credit-card"> Métodos de pago</i></label>
+                        </div>
+                        
+                        <ul style="margin-top: 40px;"><h1> </h1></ul>
+                        <div class="container" style="margin-top: 10;">
+                            <button class="btn btn-outline-dark btn-lg" style="margin-bottom: 10px;" (click)="addData(newName, newCorreo, newContra)">Agregar método</button>
+                            <div class="d-flex" style="margin-bottom: 10px;">
+                                <label for="floatingTextarea" ><i style="font-size: 25px;">Tipo:</i></label>
+                                <input #email class="form-control me-2" type="search" placeholder="Visa" style="margin-left: 100px;" aria-label="Search">
+                            </div>
+                            <div class="d-flex" style="margin-bottom: 10px;">
+                                <label for="floatingTextarea" ><i style="font-size: 25px;">Número:</i></label>
+                                <input #email class="form-control me-2" type="search" placeholder="Número" style="margin-left: 65px;" aria-label="Search">
+                            </div>
+                            <div class="d-flex" style="margin-bottom: 10px;">
+                                <label for="floatingTextarea" ><i style="font-size: 25px;">Fecha de caducidad:</i></label>
+                                <input #email class="form-control me-2" type="date" placeholder="Fecha" style="margin-left: 0px;" aria-label="Search">
+                            </div>
+                            <div class="d-flex" style="margin-bottom: 10px;">
+                                <label for="floatingTextarea" ><i style="font-size: 25px;">CVC:</i></label>
+                                <input #email class="form-control me-2" type="date" placeholder="search" style="margin-left: 108px;" aria-label="Search">
+                            </div>
+                            <div class="d-flex" style="margin-bottom: 10px;">
+                                <label for="floatingTextarea" ><i style="font-size: 25px;">Dirección:</i></label>
+                                <input #email class="form-control me-2" type="search" placeholder="Dirección" style="margin-left: 50px;" aria-label="Search">
+                            </div>
+                        </div>
+                        <div class=" bg-light text-black p-3">
+                            <button class="btn btn-outline-dark btn-lg" style="margin-bottom: 10px;" (click)="addData(newName, newCorreo, newContra)">Buscar método</button>
+                            
+                            <form class="d-flex flex-row">            
+                                <input class="form-control me-2" type="text" #newName placeholder="Número" aria-label="Search">
+                                <input class="form-control me-2" type="text" #newCorreo placeholder="CVC" aria-label="Search">
+                                <input class="form-control me-2" type="text" #newContra placeholder="Fecha" aria-label="Search">
+                            </form>
+                        </div>
+                    </div>
+                
+                    <div class="container-fluid">
+                        <div class=" bg-dark text-white p-3 text-center">
+                            <table class="table table-bordered ">
+                                <thead class="text-light bg-success"  style="background-color: rgba(92, 91, 91, 0.933); border-color: black;">
+                                    <tr style="border: solid 2px;">
+                                        <th scope="col"  style="border: solid 2px; font-size:larger;">Tarjeta</th>
+                                        <th scope="col"  style="border: solid 2px; font-size:larger;">CVC</th>
+                                        <th scope="col"  style="border: solid 2px; font-size:larger;">Vencimiento</th>
+                                    </tr>
+                                </thead>
+                                <tbody style="background-color: white;" *ngFor="let nme of name; let i = index">
+                                    <tr  style="border: solid 2px;">
+                                        <th scope="row"  style="border: solid 2px;">{{name[i]}}</th>
+                                        <td  style="border: solid 2px;">{{cor[i]}}</td>
+                                        <td  style="border: solid 2px;">{{cont[i]}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <ul></ul>
+    <div class="container-fluid">
+        <div class=" bg-dark text-white p-3">
+            <button class="btn btn-outline-light btn-lg" style="margin-bottom: 10px;" >Historial de alojamiento</button>
+            <table class="table table-bordered ">
+                <thead class="text-light bg-primary"  style="background-color: rgba(92, 91, 91, 0.933); border-color: black;">
+                    <tr style="border: solid 2px;">
+                        <th scope="col"  style="border: solid 2px; font-size:larger;">Reservación</th>
+                        <th scope="col"  style="border: solid 2px; font-size:larger;">Servicios solicitados</th>
+                        <th scope="col"  style="border: solid 2px; font-size:larger;">Costo servicios</th>
+                        <th scope="col"  style="border: solid 2px; font-size:larger;">Habitaciones</th>
+                        <th scope="col"  style="border: solid 2px; font-size:larger;">Tiempo</th>
+                        <th scope="col"  style="border: solid 2px; font-size:larger;">Total facturado</th>
+                    </tr>
+                </thead>
+                <tbody style="background-color: white;">
+                    <tr  style="border: solid 2px;">
+                        <th scope="row"  style="border: solid 2px;">3045461</th>
+                        <td  style="border: solid 2px;">
+                            <li>Valet Parking</li>
+                            <li>Restaurante</li>
+                        </td>
+                        <td  style="border: solid 2px;">300</td>
+                        <td  style="border: solid 2px;">3</td>
+                        <td  style="border: solid 2px;">1</td>
+                        <td  style="border: solid 2px;">500</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <ul>
+        <label for="floatingTextarea" style="margin-left: 75px;"></label>
+    </ul>
+</body>

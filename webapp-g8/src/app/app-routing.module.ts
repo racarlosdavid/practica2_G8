@@ -11,6 +11,7 @@ import { SolicitarValetC3Dev4Component } from './Component/solicitar-valet-c3-de
 import { PagoOnlineComponent } from './Component/pago-online/pago-online.component';
 import { CotizacionComponent } from './Component/cotizacion/cotizacion.component';
 import { AdministradorComponent } from './Component/administrador/administrador.component';
+import { UsuarioComponent } from './Component/usuario/usuario.component';
 
 
 const routes: Routes = [
@@ -62,6 +63,9 @@ const routes: Routes = [
   {
     path: 'screen2', 
     component: AdministradorComponent
+  },
+  { path: 'userpg', 
+    component: UsuarioComponent
   }
 ];
 @NgModule({
