@@ -5,10 +5,12 @@ import {FormsModule}from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { RecuperarContraseniaComponent } from './Component/recuperar-contrasenia/recuperar-contrasenia.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RecuperarContraseniaComponent
   ],
   imports: [
     BrowserModule,
