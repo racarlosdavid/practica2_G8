@@ -1,0 +1,38 @@
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://bootswatch.com/4/superhero/bootstrap.css" media="screen">
+  <link rel="stylesheet" href="https://bootswatch.com/_assets/css/custom.min.css">
+<div class="container">
+    <div class="card centrar" style="min-width: 20rem;">
+        <img src="../../assets/hotel1.jpg" class="card-img-top" alt="logo">
+        <div class="card-body">
+            <h2 class="text-center card-title"   >Registro Habitacion</h2>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Tipo Habitacion</label>
+                    <input [(ngModel)]="HABITACION.tipo_habitacion" type="text" class="form-control" id="InputName" autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="InputDate">Caracteristicas</label>
+                    <input [(ngModel)]="HABITACION.Caracteristicas" type="text" class="form-control" id="InputDate">
+                </div>
+                <div class="form-group">
+                    <label for="InputDate">Estado</label>
+                    <input [(ngModel)]="HABITACION.estado" type="text" class="form-control" id="InputDate">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Numero Habitacion</label>
+                    <input [(ngModel)]="HABITACION.numero_habitacion" type="number" class="form-control" id="InputPassword1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Piso de habitacion</label>
+                    <input [(ngModel)]="HABITACION.piso_habitacion" type="number" class="form-control" id="InputPassword1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Precio de Habitacion</label>
+                    <input [(ngModel)]="HABITACION.precio_habitacion" type="number" class="form-control" id="InputPassword1">
+                </div>
+                <button class="btn btn-primary mb1 bg-blue" (click)="insertarHabitacion()">Submit</button>
+                <button mat-raised-button color="primary" (click)="insertarHabitacion()">Cancel</button>
+            
+        </div>
+    </div>
+</div>

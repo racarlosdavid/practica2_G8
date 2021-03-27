@@ -1,0 +1,11 @@
+.formulario{
+    background: black;
+    padding: 20px;
+    margin-top: 50px;
+    margin-left: 350px;
+    margin-right: 350px;
+}
+
+.formulario h3{
+    color: #fff;
+}
