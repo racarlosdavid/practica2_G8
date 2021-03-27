@@ -14,6 +14,7 @@ import { AdministradorComponent } from './Component/administrador/administrador.
 import { UsuarioComponent } from './Component/usuario/usuario.component';
 import { EditarUsuarioComponent } from './Component/editar-usuario/editar-usuario.component';
 import { ServicioHabitacionComponent } from './Component/servicio-habitacion/servicio-habitacion.component';
+import { CalificarHotelComponent } from './Component/calificar-hotel/calificar-hotel.component';
 
 
 const routes: Routes = [
@@ -74,6 +75,9 @@ const routes: Routes = [
   },
   { path: 'servicioHabitacion', 
     component: ServicioHabitacionComponent
+  },
+  { path: 'calificarHotel', 
+    component: CalificarHotelComponent
   }
 ];
 @NgModule({
