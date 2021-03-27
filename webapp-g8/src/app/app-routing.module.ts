@@ -10,6 +10,7 @@ import { ReservaRestaurantC2Dev4Component } from './Component/reserva-restaurant
 import { SolicitarValetC3Dev4Component } from './Component/solicitar-valet-c3-dev4/solicitar-valet-c3-dev4.component'
 import { PagoOnlineComponent } from './Component/pago-online/pago-online.component';
 import { CotizacionComponent } from './Component/cotizacion/cotizacion.component';
+import { AdministradorComponent } from './Component/administrador/administrador.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,10 @@ const routes: Routes = [
     redirectTo: '/login',
     pathMatch: 'full'
   },*/
-  {path: '', component: Logindev2Component}, 
+  {
+    path: '', 
+    component: Logindev2Component
+  }, 
   {
     path:'RegistroReservacion',
     component: RegistroReservacionComponent
@@ -54,6 +58,10 @@ const routes: Routes = [
   {
     path: 'cotizacion',
     component : CotizacionComponent
+  },
+  {
+    path: 'screen2', 
+    component: AdministradorComponent
   }
 ];
 @NgModule({

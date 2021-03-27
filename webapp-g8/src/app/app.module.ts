@@ -19,6 +19,7 @@ import { ReservaRestaurantC2Dev4Component } from './Component/reserva-restaurant
 import { SolicitarValetC3Dev4Component } from './Component/solicitar-valet-c3-dev4/solicitar-valet-c3-dev4.component';
 import { PagoOnlineComponent } from './Component/pago-online/pago-online.component';
 import { CotizacionComponent } from './Component/cotizacion/cotizacion.component';
+import { AdministradorComponent } from './Component/administrador/administrador.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CotizacionComponent } from './Component/cotizacion/cotizacion.component
     SolicitarValetC3Dev4Component,
     RegistroUsuarioComponent,
     PagoOnlineComponent,
-    CotizacionComponent
+    CotizacionComponent,
+    AdministradorComponent
   ],
   imports: [
     BrowserModule,
