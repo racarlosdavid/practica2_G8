@@ -49,6 +49,11 @@ export class Logindev2Component implements OnInit {
       {
         this.router.navigate(['/screen2']);
       }
+      //Ruta User
+      if(this.tipouser == '1')
+      {
+        this.router.navigate(['/userpg']);
+      }
     }    
   }
 }
