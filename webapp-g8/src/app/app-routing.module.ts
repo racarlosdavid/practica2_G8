@@ -9,6 +9,8 @@ import { LimpiezaC1Dev4Component } from './Component/limpieza-c1-dev4/limpieza-c
 import { ReservaRestaurantC2Dev4Component } from './Component/reserva-restaurant-c2-dev4/reserva-restaurant-c2-dev4.component';
 import { SolicitarValetC3Dev4Component } from './Component/solicitar-valet-c3-dev4/solicitar-valet-c3-dev4.component'
 import { PagoOnlineComponent } from './Component/pago-online/pago-online.component';
+import { CotizacionComponent } from './Component/cotizacion/cotizacion.component';
+
 
 const routes: Routes = [
   /*{
@@ -48,6 +50,10 @@ const routes: Routes = [
   {
     path: 'pagoOnline',
     component : PagoOnlineComponent
+  },
+  {
+    path: 'cotizacion',
+    component : CotizacionComponent
   }
 ];
 @NgModule({
