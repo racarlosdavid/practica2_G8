@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { RegistroReservacionComponent } from './Component/registro-reservacion/registro-reservacion.component'
 import { RegistroHabitacionComponent } from './Component/registro-habitacion/registro-habitacion.component'
 import { Logindev2Component } from './Component/logindev2/logindev2.component';
+import { RecuperarContraseniaComponent } from './Component/recuperar-contrasenia/recuperar-contrasenia.component';
 
 const routes: Routes = [
   /*{
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path:'RegistroHabitacion',
     component:RegistroHabitacionComponent
+  },
+  {
+    path: 'recuperarContrasenia',
+    component : RecuperarContraseniaComponent
   }
 ];
 @NgModule({
