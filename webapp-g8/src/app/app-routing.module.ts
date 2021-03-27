@@ -7,6 +7,7 @@ import { RecuperarContraseniaComponent } from './Component/recuperar-contrasenia
 import { RegistroUsuarioComponent } from './Component/registro-usuario/registro-usuario.component';
 import { LimpiezaC1Dev4Component } from './Component/limpieza-c1-dev4/limpieza-c1-dev4.component'
 import { ReservaRestaurantC2Dev4Component } from './Component/reserva-restaurant-c2-dev4/reserva-restaurant-c2-dev4.component';
+import { SolicitarValetC3Dev4Component } from './Component/solicitar-valet-c3-dev4/solicitar-valet-c3-dev4.component'
 
 const routes: Routes = [
   /*{
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path:'reservaRestaurant',
     component: ReservaRestaurantC2Dev4Component
+  },
+  {
+    path:'solicitarValet',
+    component: SolicitarValetC3Dev4Component
   }
 ];
 @NgModule({
