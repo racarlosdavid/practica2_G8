@@ -26,7 +26,7 @@ import { PagoOnlineComponent } from './Component/pago-online/pago-online.compone
     RegistroUsuarioComponent,
     LimpiezaC1Dev4Component,
     ReservaRestaurantC2Dev4Component,
-    SolicitarValetC3Dev4Component
+    SolicitarValetC3Dev4Component,
     RegistroUsuarioComponent,
     PagoOnlineComponent
   ],
