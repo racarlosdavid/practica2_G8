@@ -2,6 +2,16 @@ import { Component, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 
 
+function verificarCampos(valor1,valor2,valor3): boolean {
+  if (
+    (valor1==null)||(valor2==null)||(valor3==null)||(valor1=='')||(valor2==0)||(valor2==3)
+  ){
+    return false;
+  }else{
+    return true;
+  }
+}
+
 function calcularTotald1(valor1:number, valor2:number): number {
   return valor1*valor2;
 }
@@ -33,10 +43,14 @@ export class CotizacionComponent {
   }
 
   agregar() {
-    this.datos.push(new Articulo(this.articuloselect.nombre, this.articuloselect.precio, this.articuloselect.cantidad, calcularTotald1(this.articuloselect.precio, this.articuloselect.cantidad)));
-    this.tabla1.renderRows();
-    this.articuloselect = new Articulo("", 0,0,0);
-    alert('Total de '+this.calcularCotizacion());
+    var verificar:boolean=verificarCampos(this.articuloselect.nombre,this.articuloselect.precio,this.articuloselect.cantidad);
+    if (verificar){
+      this.datos.push(new Articulo(this.articuloselect.nombre, this.articuloselect.precio, this.articuloselect.cantidad, calcularTotald1(this.articuloselect.precio, this.articuloselect.cantidad)));
+      this.tabla1.renderRows();
+      this.articuloselect = new Articulo("", 0,0,0);  
+    }else{
+      alert('Debe llenar todos los campos');
+    }
   }
 
   calcularCotizacion(){
@@ -45,6 +59,10 @@ export class CotizacionComponent {
       resultado+=this.datos[i].subtotal;
     }
     return resultado;
+  }
+
+  mostrarTotal(){
+    alert('Total de '+this.calcularCotizacion());
   }
 }
 
