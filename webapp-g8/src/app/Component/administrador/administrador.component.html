@@ -9,10 +9,9 @@
             <a class="navbar-brand" href="/" style="font-size: 80px;">Administrador</a>
 
             <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                </ul>
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;"> </ul>
                 <form class="d-flex">
-                <button class="btn btn-outline-success btn-lg" type="submit">Cerrar sesión</button>
+                    <button class="btn btn-outline-success btn-lg" type="submit" (click)="Cerrarsesion()">Cerrar sesión</button>
                 </form>
             </div>
         </div>
@@ -40,20 +39,20 @@
     </div>
 
     <!--Espaciado-->
-    <ul style="margin-top: 40px;">
-        <h1> </h1>
-    </ul>
+    <ul style="margin-top: 40px;"><h1> </h1></ul>
 
     <div class="container-fluid">
         <div class=" bg-dark text-white p-3">
-            <button class="btn btn-outline-light btn-lg" style="margin-bottom: 10px;" (click)="addData(newName, newCorreo, newContra)">Ingresar nuevo usuario</button>
+            <button class="btn btn-outline-light btn-lg" style="margin-bottom: 10px;" (click)="addData(newName, newCorreo, newContra, newContra2)">Ingresar nuevo usuario</button>
             <form class="d-flex flex-row">            
                 <input class="form-control me-2" type="text" #newName placeholder="Nombre" aria-label="Search">
                 <input class="form-control me-2" type="text" #newCorreo placeholder="Correo" aria-label="Search">
-                <input class="form-control me-2" type="text" #newContra placeholder="Contraseña" aria-label="Search">
+                <input class="form-control me-2" type="password" #newContra placeholder="Contraseña" aria-label="Search">
+                <input class="form-control me-2" type="password" #newContra2 placeholder="Confirmar contraseña" aria-label="Search">
             </form>
         </div>
     </div>
+
     <div class="container-fluid">
         <div class=" bg-dark text-white p-3 text-center">
             <table class="table table-bordered ">
@@ -64,11 +63,11 @@
                         <th scope="col"  style="border: solid 2px; font-size:larger;">Contraseña</th>
                     </tr>
                 </thead>
-                <tbody style="background-color: white;" *ngFor="let nme of name; let i = index">
+                <tbody style="background-color: white;" *ngFor="let nme of list_nom; let i = index">
                     <tr  style="border: solid 2px;">
-                        <th scope="row"  style="border: solid 2px;">{{name[i]}}</th>
-                        <td  style="border: solid 2px;">{{cor[i]}}</td>
-                        <td  style="border: solid 2px;">{{cont[i]}}</td>
+                        <th scope="row"  style="border: solid 2px;">{{list_nom[i]}}</th>
+                        <td  style="border: solid 2px;">{{list_cor[i]}}</td>
+                        <td  style="border: solid 2px;">{{list_cont[i]}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -78,31 +77,36 @@
     <ul></ul>
     <div class="container-fluid">
         <div class=" bg-dark text-white p-3">
-            <button class="btn btn-outline-light btn-lg" style="margin-bottom: 10px;" >Mostrar reservación usuario</button>
+            <div >
+                <button class="btn btn-outline-light btn-lg" style="margin-bottom: 10px;" (click)="VerReserva(vercliente)">Mostrar reservación usuario</button>
+                <form class="d-flex flex-row" style="margin-bottom: 10px;">            
+                    <input class="form-control me-2" type="text" #vercliente placeholder="Nombre usuario" aria-label="Search">
+                    <label for="floatingTextarea" style="margin-left: 900px;"></label>
+                </form>
+            </div>
+            
             <table class="table table-bordered ">
                 <thead class="text-light bg-primary"  style="background-color: rgba(92, 91, 91, 0.933); border-color: black;">
                     <tr style="border: solid 2px;">
-                        <th scope="col"  style="border: solid 2px; font-size:larger;">Reservación</th>
-                        <th scope="col"  style="border: solid 2px; font-size:larger;">Usuario</th>
-                        <th scope="col"  style="border: solid 2px; font-size:larger;">Habitación</th>
-                        <th scope="col"  style="border: solid 2px; font-size:larger;">Tiempo</th>
+                        <th scope="col"  style="border: solid 2px; font-size:larger;">ID reservación</th>
+                        <th scope="col"  style="border: solid 2px; font-size:larger;">Cliente</th>
+                        <th scope="col"  style="border: solid 2px; font-size:larger;">Número de habitaciones</th>
+                        <th scope="col"  style="border: solid 2px; font-size:larger;">Tiempo de reservación (días)</th>
                         <th scope="col"  style="border: solid 2px; font-size:larger;">Coste</th>
                     </tr>
                 </thead>
-                <tbody style="background-color: white;">
+                <tbody style="background-color: white; font-size: large;" *ngFor="let nme of res_id; let i = index">
                     <tr  style="border: solid 2px;">
-                        <th scope="row"  style="border: solid 2px;">1</th>
-                        <td  style="border: solid 2px;">Mark</td>
-                        <td  style="border: solid 2px;">Otto</td>
-                        <td  style="border: solid 2px;">@mdo</td>
-                        <td  style="border: solid 2px;">dd</td>
+                        <th scope="row"  style="border: solid 2px;">{{res_id[i]}}</th>
+                        <td  style="border: solid 2px;">{{res_cliente[i]}}</td>
+                        <td  style="border: solid 2px;">{{res_numh[i]}}</td>
+                        <td  style="border: solid 2px;">{{res_tiempo[i]}}</td>
+                        <td  style="border: solid 2px;">{{res_costo[i]}}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <ul>
-        <label for="floatingTextarea" style="margin-left: 75px;"></label>
-    </ul>
+    <ul><label for="floatingTextarea" style="margin-left: 75px;"></label></ul>
 </body>
