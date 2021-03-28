@@ -27,4 +27,18 @@ export class PagoOnlineComponent implements OnInit {
 
   }
 
+  aplicarDescuento(subTotal:number, descuento:number):number{
+    return subTotal * (descuento/100);
+  }
+
+  calcularTotal(costoHabitacion:number,nochesHespedaje:number){
+    return costoHabitacion * nochesHespedaje;
+  }
+
+  validarCodigoCVV(codigo:number){
+    if(codigo <= 999)
+      return true;
+    return false;
+  }
+
 }
