@@ -1,1 +1,90 @@
-<p>servicio-habitacion works!</p>
+<style>
+    :host {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 14px;
+      color: #333;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .content {
+      display: flex;
+      margin: 82px auto 32px;
+      padding: 0 16px;
+      max-width: 960px;
+      flex-direction: column;
+      align-items: center;
+    }  
+    .toolbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      background-color: #1976d2;
+      color: white;
+      font-weight: 600;
+    }
+  
+    .toolbar img {
+      margin: 0 16px;
+    }
+
+</style>
+  
+  <!-- Toolbar -->
+  <div class="toolbar" role="banner">
+    <img
+      width="40"
+      alt="Angular Logo"
+      src="https://www.flaticon.com/premium-icon/icons/svg/3009/3009489.svg"
+    />
+    <span>HOTEL AYD1 G8 - SERVICIO A LA HABITACION</span>
+      <div class="spacer"></div>
+      
+  </div>
+<div class="contenedor">
+    <h1>Realice su pedido</h1>
+    <h1>Realice su pedido</h1>
+    <mat-form-field>
+        <input matInput [(ngModel)]="habitacion" type="string" placeholder="Ingrese su habitacion (Ej: A407)">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-select placeholder="Productos/servicios" [(ngModel)]="seleccionada2" name="operacion">
+          <mat-option *ngFor="let op of productos" [value]="op.nombre">
+            {{op.nombre}}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field>
+        <input matInput [(ngModel)]="cantidad" type="number" placeholder="Cantidad">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput [(ngModel)]="notas" type="string" placeholder="Detalles (sin queso, extra carne, etc...)">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="realizarPedido()">Realizar pedido</button>
+  </div>
+
+  <div class="content" role="main">
+    <h2>DETALLES DEL PEDIDO:</h2>
+    <mat-list>
+        <mat-list-item>{{habitacion2}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>{{producto2}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>{{precio2}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>{{cantidad2}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>{{notas2}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>{{total2}}</mat-list-item>
+      </mat-list>
+      
+</div>
