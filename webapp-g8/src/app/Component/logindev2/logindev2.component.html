@@ -10,8 +10,8 @@
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
             </ul>
             <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
+                <input #tipbusqueda class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit" (click)="Capturafind(tipbusqueda)">Buscar</button>
             </form>
         </div>
     </div>
@@ -93,12 +93,12 @@
                     </div>
                     <ul style="margin-top: 10px;"><h1> </h1></ul>
                     <div class="d-flex flex-row justify-content-center alig-items-center">
-                        <a routerLink="/screen2">¿Has olvidado la contraseña?</a>
+                        <a routerLink="/recuperarContrasenia">¿Has olvidado la contraseña?</a>
                     </div>
 
                     <ul style="margin-top:30px;"><h1> </h1></ul>
                     <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-success" type="button">Registrarse</button>
+                        <button class="btn btn-success" type="button" (click)="IraRegistrarUsuario()">Registrarse</button>
                     </div>
                     <ul></ul>
                 </div>
