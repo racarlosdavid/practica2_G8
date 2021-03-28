@@ -2,7 +2,7 @@
 <div class="formulario">
     <h3 class="text-center mt-5">Número de cubiertos</h3>
     <div class="form-group col" wfd-id="291">
-        <select class="form-select" wfd-id="292">
+        <select class="form-select" wfd-id="292" (change)="verificarCubiertos($event.target.value)">
         <option selected="">Seleccione</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -14,7 +14,7 @@
     </div>
     <div class="row mt-5 ml-1 mr-1">
         <div class="form-group col" wfd-id="291">
-            <select class="form-select" wfd-id="292">
+            <select class="form-select" wfd-id="292" (change)="verificarDia($event.target.value)">
             <option selected="">Día</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -22,7 +22,7 @@
             </select>
         </div>
         <div class="form-group col" wfd-id="291">
-            <select class="form-select" wfd-id="292">
+            <select class="form-select" wfd-id="292" (change)="verificarMes($event.target.value)">
             <option selected="">Mes</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -30,7 +30,7 @@
             </select>
         </div>
         <div class="form-group col" wfd-id="291">
-            <select class="form-select" wfd-id="292">
+            <select class="form-select" wfd-id="292" (change)="verificarAnio($event.target.value)">
             <option selected="">Año</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -40,14 +40,17 @@
     </div>
     <h3 class="text-center mt-5">Hora</h3>
     <div class="form-group col" wfd-id="291">
-        <select class="form-select" wfd-id="292">
+        <select class="form-select" wfd-id="292" (change)="verificarHora($event.target.value)">
         <option selected="">Seleccione</option>
-        <option value="1">11:00</option>
-        <option value="2">11:15</option>
-        <option value="3">11:30</option>
-        <option value="1">11:45</option>
-        <option value="2">12:00</option>
-        <option value="3">12:15</option>
+        <option value="11:00">11:00</option>
+        <option value="11:15">11:15</option>
+        <option value="11:30">11:30</option>
+        <option value="11:45">11:45</option>
+        <option value="12:00">12:00</option>
+        <option value="12:15">12:15</option>
         </select>
+    </div>
+    <div class="text-center">
+        <button type="button" class="btn btn-light" (click)="reservar()">Reservar</button>
     </div>
 </div>
