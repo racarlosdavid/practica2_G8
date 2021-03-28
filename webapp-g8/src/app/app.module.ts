@@ -6,6 +6,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list'; 
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -57,6 +61,11 @@ import { CalificarHotelComponent } from './Component/calificar-hotel/calificar-h
     MatTableModule,
     MatInputModule,
     MatButtonModule,
+    MatDividerModule,
+    MatListModule,
+    
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

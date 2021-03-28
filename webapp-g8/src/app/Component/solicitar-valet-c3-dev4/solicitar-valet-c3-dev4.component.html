@@ -3,23 +3,23 @@
     <h3>Llegada</h3>
     <div class="formulario">
         <h4>No. de reservación</h4>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="No. de reservación" wfd-id="519">
+        <input type="text" class="form-control" id="numeroReservacion" aria-describedby="emailHelp" placeholder="No. de reservación" wfd-id="519">
         <h4>Hora de llegada</h4>
         <div class="form-group col" wfd-id="291">
-            <select class="form-select" wfd-id="292">
+            <select class="form-select" wfd-id="292" (change)="verificarHoraLlegada($event.target.value)">
             <option selected="">Seleccione</option>
-            <option value="1">11:00</option>
-            <option value="2">11:15</option>
-            <option value="3">11:30</option>
-            <option value="1">11:45</option>
-            <option value="2">12:00</option>
-            <option value="3">12:15</option>
+            <option value="11:00">11:00</option>
+            <option value="11:15">11:15</option>
+            <option value="11:30">11:30</option>
+            <option value="11:45">11:45</option>
+            <option value="12:00">12:00</option>
+            <option value="12:15">12:15</option>
             </select>
         </div>
         <h4>Observaciones</h4>
-        <textarea class="form-control" id="exampleTextarea" rows="3" wfd-id="530"></textarea>
+        <textarea class="form-control" id="observacionesLlegada" rows="3" wfd-id="530"></textarea>
         <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Solicitar</a>
+            <a class="btn btn-primary btn-lg" role="button" (click)="solicitarLlegada()">Solicitar</a>
           </p>
     </div>
 </div>
@@ -27,23 +27,23 @@
     <h3>Salida</h3>
     <div class="formulario">
         <h4>No. de habitación</h4>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="No. de habitación" wfd-id="519">
+        <input type="email" class="form-control" id="numeroHabitacion" aria-describedby="emailHelp" placeholder="No. de habitación" wfd-id="519">
         <h4>Hora de salida</h4>
         <div class="form-group col" wfd-id="291">
-            <select class="form-select" wfd-id="292">
+            <select class="form-select" wfd-id="292" (change)="verificarHoraSalida($event.target.value)">
             <option selected="">Seleccione</option>
-            <option value="1">11:00</option>
-            <option value="2">11:15</option>
-            <option value="3">11:30</option>
-            <option value="1">11:45</option>
-            <option value="2">12:00</option>
-            <option value="3">12:15</option>
+            <option value="11:00">11:00</option>
+            <option value="11:15">11:15</option>
+            <option value="11:30">11:30</option>
+            <option value="11:45">11:45</option>
+            <option value="12:00">12:00</option>
+            <option value="12:15">12:15</option>
             </select>
         </div>
         <h4>Observaciones</h4>
-        <textarea class="form-control" id="exampleTextarea" rows="3" wfd-id="530"></textarea>
+        <textarea class="form-control" id="observacionesSaida" rows="3" wfd-id="530"></textarea>
         <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Solicitar</a>
+            <a class="btn btn-primary btn-lg" role="button" (click)="solicitarSalida()">Solicitar</a>
           </p>
     </div>
 </div>

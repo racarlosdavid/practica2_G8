@@ -15,14 +15,14 @@
             <th scope="row">t15</th>
             <td>15</td>
             <th scope="row">
-                <div class="custom-control custom-switch" wfd-id="296">
-                    <input type="checkbox" class="custom-control-input" id="customSwitch1" checked="" wfd-id="497">
+                <div class="form-check form-switch" wfd-id="296">
+                    <input type="checkbox" class="form-check-input" id="customSwitch1" checked="" wfd-id="497" [(ngModel)]="checkboxValue" (change)="cambiarEstado()" >
                     <label class="custom-control-label" for="customSwitch1" wfd-id="297">Limpia</label>
                 </div>
             </th>
             <th scope="row">
                 <div class="form-group" wfd-id="291">
-                    <select class="form-select" wfd-id="292">
+                    <select class="form-select" wfd-id="292" id="empleado" (change)="asignarEmpleado($event.target.value)">
                     <option selected="">Seleccione</option>
                     <option value="1">Luisa</option>
                     <option value="2">Camila</option>

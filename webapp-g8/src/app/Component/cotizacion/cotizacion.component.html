@@ -331,7 +331,7 @@
     <ng-container matColumnDef="borrar">
       <th mat-header-cell *matHeaderCellDef> ¿Quitar? </th>
       <td mat-cell *matCellDef="let j = index;">
-        <button mat-raised-button color="warn" focusable="false" (click)="borrarFila(j)">
+        <button mat-raised-button color="primary" focusable="false" (click)="borrarFila(j)">
           ¿Quitar?
         </button>
       </td>
@@ -362,6 +362,7 @@
     </mat-form-field>
   
     <button mat-raised-button color="primary" (click)="agregar()">Agregar</button>
+    <button mat-raised-button color="primary" (click)="mostrarTotal()">Calcular</button>
   
   </div>
 </div>
