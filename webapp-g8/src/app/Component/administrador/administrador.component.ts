@@ -26,9 +26,9 @@ export class AdministradorComponent implements OnInit {
 
   //Variables auxiliares
   valdatos: boolean;
-  valcontra: boolean;
+  valcontra: number;
   valadmin: boolean;
-  valuser: boolean;
+  valuser: number;
 
   //Datos para la tabla
   list_nom = ['Us1', 'Us2', 'Us3'];
@@ -61,11 +61,11 @@ export class AdministradorComponent implements OnInit {
     this.contra2 = newContra2.value;
 
     //Llamado a verificadoras de contenido
-    this.valdatos = Verifcamposllenos(this.nombre, this.correo, this.contra, this.contra2);
-    this.valcontra = Verifcontra(this.contra, this.contra2);
+    this.valdatos = this.Verifcamposllenos(this.nombre, this.correo, this.contra, this.contra2);
+    this.valcontra = this.Verifcontra(this.contra, this.contra2);
 
     //Si ambas variables son verdaderas se capturan los valores
-    if(this.valdatos == true && this.valcontra == true)
+    if(this.valdatos == true && this.valcontra == 1)
     {
       //Agregar los datos a la lista
       this.list_nom.push(newName.value);
@@ -74,10 +74,10 @@ export class AdministradorComponent implements OnInit {
       this.list_cont2.push(newContra2.value);
       
       //Limpiar el input
-      newName.value = '';
+      /*newName.value = '';
       newCorreo.value = '';
       newContra.value = '';
-      newContra2.value = '';
+      newContra2.value = '';*/
     }
     
     //Para que no se refresque la página
@@ -90,10 +90,10 @@ export class AdministradorComponent implements OnInit {
     this.clientdatos = vercliente.value;
 
     //Verificadora de contenido
-    this.valuser = Verifnuser(this.clientdatos);
+    this.valuser = this.Verifnuser(this.clientdatos);
 
     //Si es verdadero es porque si se llenaron las cajas
-    if(this.valuser == true)
+    if(this.valuser == 2)
     {
       let existe = false;
 
@@ -132,48 +132,48 @@ export class AdministradorComponent implements OnInit {
   {
     this.router.navigate(['']);
   }
+  //---------Funciones de verificación
+  //Función de verificación de campos
+  Verifcamposllenos(nombre:string, correo:string, contra:string, contra2:string): boolean
+  {
+    //Campos deben ser distintos de null
+    if(nombre == '' || correo == '' || contra == '' || contra2 == '')
+    {
+      alert('Es necesario llenar todos los campos');
+      return false;
+    }
+    else
+    {
+      return true;
+    }
+  };
+  //Función para comparar las contraseñas
+  Verifcontra(contra:string, contra2:string): number
+  {
+    //Deben ser iguales
+    if(contra == contra2)
+    {
+      return 1;
+    }
+    else
+    {
+      alert("Las contraseñas no coinciden")
+      return 3;
+    }
+  };
+  //Función para verificar campo nombre
+  Verifnuser(nom:string): number
+  {
+    //Debe ser distinto de null
+    if(nom == '')
+    {
+      alert("Debe ingresar un nombre");
+      return 0;
+    }
+    else
+    {
+      return 2;
+    }
+  };
 }
 
-//---------Funciones de verificación
-//Función de verificación de campos
-function Verifcamposllenos(nombre:string, correo:string, contra:string, contra2:string): boolean
-{
-  //Campos deben ser distintos de null
-  if(nombre == '' || correo == '' || contra == '' || contra2 == '')
-  {
-    alert('Es necesario llenar todos los campos');
-    return false;
-  }
-  else
-  {
-    return true;
-  }
-};
-//Función para comparar las contraseñas
-function Verifcontra(contra:string, contra2:string): boolean
-{
-  //Deben ser iguales
-  if(contra == contra2)
-  {
-    return true;
-  }
-  else
-  {
-    alert("Las contraseñas no coinciden")
-    return false;
-  }
-};
-//Función para verificar campo nombre
-function Verifnuser(nom:string): boolean
-{
-  //Debe ser distinto de null
-  if(nom == '')
-  {
-    alert("Debe ingresar un nombre");
-    return false;
-  }
-  else
-  {
-    return true;
-  }
-};
