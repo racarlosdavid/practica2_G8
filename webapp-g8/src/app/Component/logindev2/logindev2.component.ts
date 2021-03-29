@@ -51,8 +51,8 @@ export class Logindev2Component implements OnInit {
     this.contra = contra.value;
 
     //Llamado a verificadoras de contenido
-    this.valdatos = Verifcamposllenos(this.correo, this.contra);
-    this.valtipuser = Veriftipousuario(this.tipouser);
+    this.valdatos = this.Verifcamposllenos(this.correo, this.contra);
+    this.valtipuser = this.Veriftipousuario(this.tipouser);
 
     //Si ambas variables son verdaderas se redirige a la ruta respectiva
     if(this.valdatos == true && this.valtipuser == true)
@@ -64,7 +64,7 @@ export class Logindev2Component implements OnInit {
       else
       {
         //Se verifica que los datos del admin sean los correctos
-        this.valadmin = Verifadmi(this.correo, this.contra);
+        this.valadmin = this.Verifadmi(this.correo, this.contra);
 
         if(this.valadmin == true)
         {
@@ -77,14 +77,14 @@ export class Logindev2Component implements OnInit {
   Capturafind(tip)
   {
     //Se busca el string en el array
-    this.busqueda = this.Verificarbusqueda(tip);
+    this.busqueda = this.Verificarbusqueda(tip.value);
     alert(this.busqueda);
   };
   //Verificar resultados
   Verificarbusqueda(tipbusqueda)
   {
     //Se asigna a una variable para conversión a minúsculas
-    let source = tipbusqueda.value;
+    let source = tipbusqueda;
     let res: string = 'Búsqueda fallida';
 
     //Se busca en todo el arreglo
@@ -103,47 +103,46 @@ export class Logindev2Component implements OnInit {
   {
     this.router.navigate(['/registrarUsuario']);
   }
+  //---------Funciones de verificación
+  //Función de verificación de campos
+  Verifcamposllenos(correo:string, contra:string): boolean
+  {
+    //Campos deben ser distintos de null
+    if(correo == '' || contra == '')
+    {
+      alert('Es necesario llenar todos los campos');
+      return false;
+    }
+    else
+    {
+      return true;
+    }
+  };
+  //Función de verificacion de usuario
+  Veriftipousuario(tipousuario:string): boolean
+  {
+    //El tipo usuario debe ser 1 o 2
+    if(tipousuario =='1' || tipousuario == '2')
+    {
+      return true;
+    }
+    else
+    {
+      alert("Debe seleccionar un tipo de usuario");
+      return false;
+    }
+  };
+  //Función de verificación de admin
+  Verifadmi(correo:string, contra:string): boolean
+  {
+    if(correo == 'admin' && contra == '1234')
+    {
+      return true;
+    }
+    else
+    {
+      alert("No coinciden los datos");
+      return false;
+    }
+  };
 }
-
-//---------Funciones de verificación
-//Función de verificación de campos
-function Verifcamposllenos(correo:string, contra:string): boolean
-{
-  //Campos deben ser distintos de null
-  if(correo == '' || contra == '')
-  {
-    alert('Es necesario llenar todos los campos');
-    return false;
-  }
-  else
-  {
-    return true;
-  }
-};
-//Función de verificacion de usuario
-function Veriftipousuario(tipousuario:string): boolean
-{
-  //El tipo usuario debe ser 1 o 2
-  if(tipousuario =='1' || tipousuario == '2')
-  {
-    return true;
-  }
-  else
-  {
-    alert("Debe seleccionar un tipo de usuario");
-    return false;
-  }
-};
-//Función de verificación de admin
-function Verifadmi(correo:string, contra:string): boolean
-{
-  if(correo == 'admin' && contra == '1234')
-  {
-    return true;
-  }
-  else
-  {
-    alert("No coinciden los datos");
-    return false;
-  }
-};
