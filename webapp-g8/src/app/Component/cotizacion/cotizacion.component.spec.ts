@@ -11,7 +11,7 @@ describe('CotizacionComponent', () => {
     component= new CotizacionComponent();
   });
 
-  it('Prueba para verificarCampos(): Se espera recibir "false"', async (()=>{
+  it('Prueba para verificarCampos(): Se espera recibir false', async (()=>{
     var x1=null;
     var x2=0;
     var x3=0;
