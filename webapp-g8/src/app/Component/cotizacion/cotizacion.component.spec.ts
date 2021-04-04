@@ -37,3 +37,52 @@ describe('CotizacionComponent', () => {
   }));
 
 });
+
+describe('CotizacionMocks', () => {
+  class MockDatos extends CotizacionComponent {
+    verificarCampos(valor1,valor2,valor3)
+    {
+      return true;
+    }
+    sumaSubtotales(){
+      return 100;
+    }  
+  }
+
+  let component: CotizacionComponent;
+  let mock: MockDatos;
+  
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      providers: [
+        {
+          useClass: MockDatos
+        }
+      ],
+      declarations: [ CotizacionComponent ]
+    })
+    .compileComponents();
+    mock = new MockDatos();
+    component = new CotizacionComponent();
+  });
+
+  
+//Prueba para verificar si se llama el verificarCampos al momento de usar el metodo agregar()
+it('Caso de prueba con Mock para verficarCampos(): verificar si se llamo la funcion verificarCampos()', () => 
+  {
+      var spy = spyOn(mock, 'verificarCampos');
+      mock.agregar();
+      expect(spy).toHaveBeenCalled();
+  });
+
+  //Prueba para verificar que la alerta contenga el mensaje correcto
+  it('Caso de prueba con Mock para mostrarTotal(): verificar si la alerta con el total se muestra correctamente', () => 
+  {
+      var spy = spyOn(window, 'alert').and.callThrough();
+      mock.mostrarTotal();
+      expect(spy).toHaveBeenCalledWith('El total es de Q100');
+  });
+
+
+
+});
