@@ -74,7 +74,7 @@ describe('Prueba verificar cantidad de personas',()=>{
     expect(rta).toEqual(3);
   });
 });
-fdescribe('RegistroReservacion-Mock',()=>{
+describe('RegistroReservacion-Mock',()=>{
   class MockReserva extends Reserva{
     veficarcampos():boolean{
       return true;
