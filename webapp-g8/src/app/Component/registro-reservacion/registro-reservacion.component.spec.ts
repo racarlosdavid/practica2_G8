@@ -74,3 +74,39 @@ describe('Prueba verificar cantidad de personas',()=>{
     expect(rta).toEqual(3);
   });
 });
+fdescribe('RegistroReservacion-Mock',()=>{
+  class MockReserva extends Reserva{
+    veficarcampos():boolean{
+      return true;
+    }
+    verificarfechas():boolean{
+      return true;
+    }
+    verificarCantidadPersonas():number{
+      return 4;
+    }
+  }
+
+  let component: RegistroReservacionComponent;
+  let mockreservacion:MockReserva;
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      providers: [
+        {
+          useClass: MockReserva
+        }
+      ],
+      declarations: [ RegistroReservacionComponent ]
+    })
+    .compileComponents();
+    mockreservacion = new MockReserva();
+    component = new RegistroReservacionComponent();
+  });
+
+  it('se espera que el metodo verificarCantidadPersonas',()=>{
+    var spia = spyOn(component,'insertarReserva');
+    component.insertarReserva();
+    expect(spia).toHaveBeenCalled();
+    
+  })
+});
