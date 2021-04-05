@@ -53,3 +53,36 @@ describe('SolicitarValetC3Dev4Component', () => {
     expect(solicitud.solicitarSalida()).toEqual(true)
   }));
 });
+
+describe('SolicitarValetMocks', () =>{
+  class MockSolicitud extends SolicitarValetC3Dev4Component { 
+    solicitarLlegada(){
+      return true
+    }
+  }
+
+  let component: SolicitarValetC3Dev4Component;
+  let mock: MockSolicitud;
+
+ beforeEach(async () => {
+   await TestBed.configureTestingModule({
+     providers: [
+       {
+         useClass: MockSolicitud
+       }
+     ],
+     declarations: [ SolicitarValetC3Dev4Component ]
+   })
+   .compileComponents();
+   mock = new MockSolicitud();
+   component = new SolicitarValetC3Dev4Component();
+ });
+
+ it('Caso de prueba con Mock para solicitarLlegada(): verificar si se llamo la funcion solicitarLlegada()', () => 
+ {
+     var spy = spyOn(mock, 'solicitarLlegada');
+     mock.solicitarLlegada();
+     expect(spy).toHaveBeenCalled();
+ });
+
+})
