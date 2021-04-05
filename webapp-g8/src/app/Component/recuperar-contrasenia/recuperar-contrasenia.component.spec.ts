@@ -19,7 +19,12 @@ describe('RecuperarContraseniaComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('validar el correo racarlosdavid@gmail.com se espera un valor mayor a 0 si el correo es valido', () => {
+    expect(component.validarCorreo("racarlosdavid@gmail.com")).toBeGreaterThan(0);
   });
+
+  it('validar el campo correo se espera un false, si el campo tiene un correo', () => {
+    expect(component.validadCampoVacio("racarlosdavid@gmail.com")).toBeFalse();
+  });
+
 });

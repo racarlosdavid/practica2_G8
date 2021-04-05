@@ -1,25 +1,28 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 
 import { CalificarHotelComponent } from './calificar-hotel.component';
+import { Calificacion } from './calificar-hotel.component';
 
 describe('CalificarHotelComponent', () => {
-  let component: CalificarHotelComponent;
-  let fixture: ComponentFixture<CalificarHotelComponent>;
-
+  let calificacion: CalificarHotelComponent;
+  
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ CalificarHotelComponent ]
-    })
-    .compileComponents();
+    calificacion = new CalificarHotelComponent();
   });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(CalificarHotelComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  it('Prueba para verificarCampos(): Se espera recibir true', () => {
+    var x1=4;
+    var x2='prueba';
+    expect(calificacion.verificarCampos(x1,x2)).toEqual(true);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('Prueba para crearCalificacion(): Se espera un objeto Calificacion con los atributos ingresados', () => {
+    var x1=4;
+    var x2='prueba';
+    expect(calificacion.crearCalificacion(x1,x2)).toEqual(
+      new Calificacion(4,'prueba')
+    );
   });
+
+
 });
