@@ -82,3 +82,70 @@ describe('RegistroHabitacion-Mock',()=>{
     
   })
 });
+describe('Prueba verificar campos Habitacion',()=>{
+  it('deberia devolver true',() =>{
+    //ARRANGE
+    const reser = new Habitacion("doble","contiene dos camas con un solo ","libre",122,1,1500);
+    //ACT
+    const rta = reser.verificarcampos();
+    //ASSERT
+    expect(rta).toBeTrue();
+  });
+});
+describe('Prueba verificar campos Habitacion',()=>{
+  it('deberia devolver falso',() =>{
+    //ARRANGE
+    const reser = new Habitacion("doble","contiene dos camas con un solo ","libre",122,-2,1500);
+    //ACT
+    const rta = reser.verificarcampos();
+    //ASSERT
+    expect(rta).toBeFalse();
+  });
+});
+describe('Pueba correlativo Estado',()=>{
+  
+  it('deberia debolver un numero mayor a 0',() =>{
+  //ARRANGE
+  const habit = new Habitacion("doble","es para dos personas","limpieza",301,3,1200);
+  //ACT
+  const rta = habit.correlativoEstado("limpieza");
+  //ASSERT
+  expect(rta).toEqual(3);
+  });
+});
+describe('Pueba correlativo Estado',()=>{
+  
+  it('deberia debolver un numero mayor a 0',() =>{
+  //ARRANGE
+  const habit = new Habitacion("doble","es para dos personas","opcupado",301,3,1200);
+  //ACT
+  const rta = habit.correlativoEstado("ocupado");
+  //ASSERT
+  expect(rta).toEqual(2);
+  });
+});
+describe('Pueba correlativo Estado',()=>{
+  
+  it('deberia debolver un 0',() =>{
+  //ARRANGE
+  const habit = new Habitacion("doble","es para dos personas","pendiente",301,3,1200);
+  //ACT
+  const rta = habit.correlativoEstado("pendiene");
+  //ASSERT
+  expect(rta).toEqual(0);
+  });
+});
+
+describe('Pueba insertar habitacion ',()=>{
+  
+  it('deberia debolver un 1',() =>{
+  //ARRANGE
+  const habit = new Habitacion("doble","es para dos personas","pendiente",301,3,1200);
+  let component2 = new RegistroHabitacionComponent();
+  //ACT
+  component2.HABITACION = habit;
+  component2.insertarHabitacion();
+  //ASSERT
+  expect(component2.HABITACIONES.length).toEqual(1);
+  });
+});
