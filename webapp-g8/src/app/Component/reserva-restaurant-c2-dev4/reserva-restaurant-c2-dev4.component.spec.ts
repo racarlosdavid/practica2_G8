@@ -39,3 +39,36 @@ describe('Reservar mesa', () => {
  }))
 
 });
+
+describe('ReservarMesaMocks', () =>{
+  class MockReserva extends ReservaRestaurantC2Dev4Component { 
+   reservar(){
+      return true
+    }
+  }
+
+  let component: ReservaRestaurantC2Dev4Component;
+  let mock: MockReserva;
+
+ beforeEach(async () => {
+   await TestBed.configureTestingModule({
+     providers: [
+       {
+         useClass: MockReserva
+       }
+     ],
+     declarations: [ ReservaRestaurantC2Dev4Component ]
+   })
+   .compileComponents();
+   mock = new MockReserva();
+   component = new ReservaRestaurantC2Dev4Component();
+ });
+
+ it('Caso de prueba con Mock para reservar(): verificar si se llamo la funcion verificarCampos()', () => 
+ {
+     var spy = spyOn(mock, 'reservar');
+     mock.reservar();
+     expect(spy).toHaveBeenCalled();
+ });
+
+})
