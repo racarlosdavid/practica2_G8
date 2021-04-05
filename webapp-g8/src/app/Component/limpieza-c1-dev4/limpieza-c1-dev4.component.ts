@@ -18,17 +18,22 @@ export class LimpiezaC1Dev4Component implements OnInit {
     console.log(this.checkboxValue)
     if(this.checkboxValue == true){
       (<HTMLSelectElement>document.getElementById("empleado")).disabled = true;
+      return true
     }else{
       (<HTMLSelectElement>document.getElementById("empleado")).disabled = false;
+      return false
     }
   }
   asignarEmpleado(valor:string){
     if(this.checkboxValue && valor != "Seleccione"){
       alert("La habitación ya se encuentra limpia.")
+      return false
     }else if(!this.checkboxValue && valor == "Seleccione"){
       alert("Debe seleccionar un empleado")
+      return false
     }else{
       alert("Asignado correctamente.")
+      return true
     }
   }
 }
