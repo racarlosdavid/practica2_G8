@@ -46,3 +46,39 @@ describe('Pueba correlativo Estado',()=>{
   expect(rta).toEqual(1);
   });
 });
+describe('RegistroHabitacion-Mock',()=>{
+  class MockHabitacion extends Habitacion{
+    verificarcampos():boolean{
+      return true;
+    }
+    correlativoEstado():number{
+      return 1;
+    }
+    getestadohabitacion():string{
+      return 'Estado';
+    }
+  }
+
+  let component: RegistroHabitacionComponent;
+  let mockhabita:MockHabitacion;
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      providers: [
+        {
+          useClass: Habitacion
+        }
+      ],
+      declarations: [ RegistroHabitacionComponent ]
+    })
+    .compileComponents();
+    mockhabita = new MockHabitacion();
+    component = new RegistroHabitacionComponent();
+  });
+
+  it('se espera que el metodo insertarHabitacion',()=>{
+    var spia = spyOn(component,'insertarHabitacion');
+    component.insertarHabitacion();
+    expect(spia).toHaveBeenCalled();
+    
+  })
+});
