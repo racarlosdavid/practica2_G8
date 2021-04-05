@@ -24,12 +24,26 @@ describe('SolicitarValetC3Dev4Component', () => {
   it('Prueba para verificarHoraLlegada(valor:string), se espera el valor true', async(() =>{
     expect(solicitud.verificarHoraLlegada('12:00')).toEqual(true)
   }));
+
+  it('Prueba para verificarHoraLlegada(valor:string), se espera el valor false', async(() =>{
+    expect(solicitud.verificarHoraLlegada('Seleccione')).toEqual(false)
+  }));
   
   it('Prueba para verificarHoraSalida(valor:string), se espera el valor true', async(() =>{
     expect(solicitud.verificarHoraSalida('11:00')).toEqual(true)
   }));
 
+  it('Prueba para verificarHoraSalida(valor:string), se espera el valor false', async(() =>{
+    expect(solicitud.verificarHoraSalida('Seleccione')).toEqual(false)
+  }));
+
   it('Prueba para verificarCamposLlegada(), se espera el valor true', async(() => {
+    (<HTMLInputElement>document.getElementById("numeroReservacion")).value = '25'
+    solicitud.verificarHoraLlegada('Seleccione')
+    expect(solicitud.verificarCamposLlegada()).toEqual(false)
+  }));
+
+  it('Prueba para verificarCamposLlegada(), se espera el valor false', async(() => {
     (<HTMLInputElement>document.getElementById("numeroReservacion")).value = '25'
     solicitud.verificarHoraLlegada('12:00')
     expect(solicitud.verificarCamposLlegada()).toEqual(true)
