@@ -44,10 +44,52 @@ describe('Prueba veficiar Fechas Reservacion',()=>{
     expect(rta).toBeTrue();
   });
 });
+
+describe('Prueba veficiar Fechas Reservacion',()=>{
+  it('deberia devolver true',()=>{
+    //ARRANGE
+    const reser = new Reserva("doble","2021-03-12","2021-04-19",0,0);
+    //ACT
+    const rta = reser.verificarfechas();
+    //ASSERT
+    expect(rta).toBeTrue();
+  });
+});
+
+describe('Prueba veficiar Fechas Reservacion',()=>{
+  it('deberia devolver true',()=>{
+    //ARRANGE
+    const reser = new Reserva("doble","2021-03-12","2022-03-19",0,0);
+    //ACT
+    const rta = reser.verificarfechas();
+    //ASSERT
+    expect(rta).toBeTrue();
+  });
+});
 describe('Prueba veficiar Fechas Reservacion false',()=>{
   it('deberia devolver false',()=>{
     //ARRANGE
     const reser = new Reserva("doble","2021-03-19","2021-03-12",0,0);
+    //ACT
+    const rta = reser.verificarfechas();
+    //ASSERT
+    expect(rta).toBeFalse();
+  });
+});
+describe('Prueba veficiar Fechas Reservacion false',()=>{
+  it('deberia devolver false',()=>{
+    //ARRANGE
+    const reser = new Reserva("doble","2021-03-19","2021-02-12",0,0);
+    //ACT
+    const rta = reser.verificarfechas();
+    //ASSERT
+    expect(rta).toBeFalse();
+  });
+});
+describe('Prueba veficiar Fechas Reservacion false',()=>{
+  it('deberia devolver false',()=>{
+    //ARRANGE
+    const reser = new Reserva("doble","2021-03-19","2020-03-12",0,0);
     //ACT
     const rta = reser.verificarfechas();
     //ASSERT
@@ -72,6 +114,16 @@ describe('Prueba verificar cantidad de personas',()=>{
     const rta = reser.verificarCantidadPersonas();
     //ASSERT
     expect(rta).toEqual(3);
+  });
+});
+describe('Prueba verificar cantidad de personas',()=>{
+  it('deberia devolver la cantidad 0',() =>{
+    //ARRANGE
+    const reser = new Reserva("","2021","2021",-3,12);
+    //ACT
+    const rta = reser.verificarCantidadPersonas();
+    //ASSERT
+    expect(rta).toEqual(0);
   });
 });
 describe('RegistroReservacion-Mock',()=>{
@@ -109,4 +161,18 @@ describe('RegistroReservacion-Mock',()=>{
     expect(spia).toHaveBeenCalled();
     
   })
+});
+
+describe('Pueba insertar reservacion ',()=>{
+  
+  it('deberia debolver un 1',() =>{
+  //ARRANGE
+  const reser = new Reserva("doble","2021-03-12","2021-03-19",4,12);
+  let component2 = new RegistroReservacionComponent();
+  //ACT
+  component2.RESERVA = reser;
+  component2.insertarReserva();
+  //ASSERT
+  expect(component2.RESERVACIONES.length).toEqual(1);
+  });
 });
