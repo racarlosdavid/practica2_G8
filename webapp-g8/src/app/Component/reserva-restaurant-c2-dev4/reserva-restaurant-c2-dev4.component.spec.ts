@@ -64,7 +64,7 @@ describe('ReservarMesaMocks', () =>{
    component = new ReservaRestaurantC2Dev4Component();
  });
 
- it('Caso de prueba con Mock para reservar(): verificar si se llamo la funcion verificarCampos()', () => 
+ it('Caso de prueba con Mock para reservar(): verificar si se llamo la funcion reservar()', () => 
  {
      var spy = spyOn(mock, 'reservar');
      mock.reservar();

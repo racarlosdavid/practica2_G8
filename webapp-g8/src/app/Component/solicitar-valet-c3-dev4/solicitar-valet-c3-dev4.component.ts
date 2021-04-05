@@ -31,30 +31,37 @@ export class SolicitarValetC3Dev4Component implements OnInit {
   verificarHoraLlegada(valor:string){
     if(valor == 'Seleccione'){
       alert('Debe seleccionar la hora de llegada!')
+      return false
     }
     else{
       this.horaL = valor
+      return true
     }
   }
   verificarHoraSalida(valor:string){
     if(valor == 'Seleccione'){
       alert('Debe seleccionar la hora de salida!')
+      return false
     }
     else{
       this.horaS = valor
+      return true
     }
   }
   //Solicitar valet parking al llegar
   solicitarLlegada(){
-    if(this.verificarCamposLlegada()){
+    var bandera:Boolean = this.verificarCamposLlegada()
+    if(bandera){
       this.valet.tipo = 1
       this.valet.numero = this.numeroL
       this.valet.hora = this.horaL
       this.valet.observaciones = this.observacionesL
       alert("Su solicitud ha sido realizada.")
+      return true
     }
     else{
       alert("Debe llenar todos los campos!")
+      return false
     }
   }
   verificarCamposLlegada():boolean{
@@ -69,15 +76,18 @@ export class SolicitarValetC3Dev4Component implements OnInit {
   }
   //solicitar valet parking al salir
   solicitarSalida(){
-    if(this.verificarCamposSalida()){
+    var bandera:boolean = this.verificarCamposSalida();
+    if(bandera){
       this.valet.tipo = 2
       this.valet.numero = this.numeroS
       this.valet.hora = this.horaS
       this.valet.observaciones = this.observacionesS
       alert("Su solicitud ha sido realizada.")
+      return true
     }
     else{
       alert("Debe llenar todos los campos!")
+      return false
     }
   }
   verificarCamposSalida():boolean{
