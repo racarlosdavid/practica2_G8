@@ -2,30 +2,31 @@ import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+
+  //Se busca declarar una instancia del componente
+  let component : AppComponent;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
     }).compileComponents();
-  });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    //Inicializo la instancia dentro de beforeEach
+    //Este componente permite llamar a todo lo que tengamos publico en nuestro componente
+    component = new AppComponent();
   });
+  
+  //Cada caso de prueba se escribe con la palabra it
+  //Primero recibe un string con la descripción de la prueba, luego un callback para la prueba unitaria
+  it('La variable title de AppComponent debe contener el nombre del proyecto', () =>
+  {
+    //Variable que va a amacenar el resultado del component.title
+    let myvar : string = component.title;
 
-  it(`should have as title 'webapp-g8'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('webapp-g8');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('webapp-g8 app is running!');
-  });
+    //Para evaluar se coloca el expect
+    //expect(Mi_variable) es igual a 'webapp-g8'
+    expect(myvar).toEqual('webapp-g8');
+  })
 });

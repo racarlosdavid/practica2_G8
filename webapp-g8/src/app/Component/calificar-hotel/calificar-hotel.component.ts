@@ -1,19 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-function verificarCampos(valor1,valor2): boolean {
-  if (
-    (valor1==null)||(valor2==null)||(valor2=='')
-  ){
-    return false;
-  }else{
-    return true;
-  }
-}
-
-function crearCalificacion(x1:number,x2:string):Calificacion{
-  return new Calificacion(x1,x2);
-}
-
 @Component({
   selector: 'app-calificar-hotel',
   templateUrl: './calificar-hotel.component.html',
@@ -27,16 +13,28 @@ export class CalificarHotelComponent {
   calificacion=null;
 
   calificar(){
-    var verificar:boolean=verificarCampos(this.puntaje,this.opinion);
+    var verificar:boolean=this.verificarCampos(this.puntaje,this.opinion);
     if (verificar){
-      alert('Calificacion: '+this.puntaje+' estrellas\n\n'
-        +this.opinion);
-      
-        this.calificacion=crearCalificacion(this.puntaje,this.opinion);
-        
+        this.calificacion=this.crearCalificacion(this.puntaje,this.opinion);
+        alert('Calificacion: '+this.calificacion.punteo+' estrellas\n\n'
+        +this.calificacion.comentario);  
     }else{
       alert('Debe ingresar una calificacion entre 1 y 5 entrellas, y debe dejar una opinion sobre el hotel');
     }
+  }
+
+  verificarCampos(valor1,valor2): boolean {
+    if (
+      (valor1==null)||(valor2==null)||(valor2=='')
+    ){
+      return false;
+    }else{
+      return true;
+    }
+  }
+  
+  crearCalificacion(x1:number,x2:string):Calificacion{
+    return new Calificacion(x1,x2);
   }
 }
 export class Calificacion {

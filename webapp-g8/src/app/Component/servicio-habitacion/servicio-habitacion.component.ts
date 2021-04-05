@@ -1,19 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-function verificarCampos(valor1,valor2): boolean {
-  if (
-    (valor1==null)||(valor2==null)||(valor1=='')||(valor2==0)
-  ){
-    return false;
-  }else{
-    return true;
-  }
-}
-
-function totalPedido(valor1:number, valor2:number): number {
-  return valor1*valor2;
-}
-
 @Component({
   selector: 'app-servicio-habitacion',
   templateUrl: './servicio-habitacion.component.html',
@@ -58,13 +44,13 @@ export class ServicioHabitacionComponent {
   seleccionada2: string = this.productos[0].nombre;
 
   realizarPedido(){
-    var verificar:boolean=verificarCampos(this.habitacion,this.cantidad);
+    var verificar:boolean=this.verificarCampos(this.habitacion,this.cantidad);
     if (verificar){
       for (var _i = 0; _i < this.productos.length; _i++){
         if (this.productos[_i].nombre==this.seleccionada2){
           this.producto2='Producto: '+this.productos[_i].nombre;
           this.precio2='Precio Q: '+this.productos[_i].precio;
-          this.total=totalPedido(this.productos[_i].precio,this.cantidad);
+          this.total=this.totalPedido(this.productos[_i].precio,this.cantidad);
         }
       }
       
@@ -79,5 +65,19 @@ export class ServicioHabitacionComponent {
       alert('Debe ingresar habitacion y una cantidad');
     }
 
+  }
+
+  verificarCampos(valor1,valor2): boolean {
+    if (
+      (valor1==null)||(valor2==null)||(valor1=='')||(valor2==0)
+    ){
+      return false;
+    }else{
+      return true;
+    }
+  }
+  
+  totalPedido(valor1:number, valor2:number): number {
+    return valor1*valor2;
   }
 }
