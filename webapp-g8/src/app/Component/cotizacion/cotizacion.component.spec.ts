@@ -2,6 +2,8 @@ import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 
 import { CotizacionComponent } from './cotizacion.component';
 import { Articulo } from './cotizacion.component';
+import { MatTable } from '@angular/material/table';
+import { Component, ViewChild } from '@angular/core';
 
 describe('CotizacionComponent', () => {
   let component: CotizacionComponent;
@@ -16,6 +18,13 @@ describe('CotizacionComponent', () => {
     var x2=0;
     var x3=0;
     expect (component.verificarCampos(x1,x2,x3)).toEqual(false);
+  }));
+
+  it('Prueba para verificarCampos(): Se espera recibir true', async (()=>{
+    var x1='a';
+    var x2=10;
+    var x3=20;
+    expect (component.verificarCampos(x1,x2,x3)).toEqual(true);
   }));
 
   it('Prueba para calcularSubTotal(): El subTotal debe ser 44', async (()=>{
@@ -36,6 +45,12 @@ describe('CotizacionComponent', () => {
     expect (component.sumaSubtotales(datos)).toEqual(4444);
   }));
 
+  it('Prueba para crearArticulo(): Debe retornar un objeto Articulo con los datos indicados', async (()=>{
+    expect (component.crearArticulo("Articulo1", 1,1,1)).toEqual(
+      new Articulo("Articulo1", 1,1,1)
+    );
+  }));
+
 });
 
 describe('CotizacionMocks', () => {
@@ -46,7 +61,13 @@ describe('CotizacionMocks', () => {
     }
     sumaSubtotales(){
       return 100;
-    }  
+    }
+    renderizarColumnas(){
+      return true;
+    }
+    confirmaBorrar(){
+      return true;
+    }
   }
 
   let component: CotizacionComponent;
@@ -62,8 +83,10 @@ describe('CotizacionMocks', () => {
       declarations: [ CotizacionComponent ]
     })
     .compileComponents();
-    mock = new MockDatos();
+    
     component = new CotizacionComponent();
+    mock = new MockDatos();
+    
   });
 
   
@@ -72,6 +95,20 @@ it('Caso de prueba con Mock para verficarCampos(): verificar si se llamo la func
   {
       var spy = spyOn(mock, 'verificarCampos');
       mock.agregar();
+      expect(spy).toHaveBeenCalled();
+  });
+
+  it('Caso de prueba con Mock para renderizarColumnas(): verificar si se llamo la funcion renderizarColumnas()', () => 
+  {
+      var spy = spyOn(mock, 'renderizarColumnas');
+      mock.agregar();
+      expect(spy).toHaveBeenCalled();
+  });
+
+  it('Caso de prueba con Mock para confirmaBorrar(): verificar si se llamo la funcion confirmaBorrar()', () => 
+  {
+      var spy = spyOn(mock, 'confirmaBorrar');
+      mock.borrarFila(1);
       expect(spy).toHaveBeenCalled();
   });
 

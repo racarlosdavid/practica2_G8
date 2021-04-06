@@ -46,21 +46,7 @@ export class ServicioHabitacionComponent {
   realizarPedido(){
     var verificar:boolean=this.verificarCampos(this.habitacion,this.cantidad);
     if (verificar){
-      for (var _i = 0; _i < this.productos.length; _i++){
-        if (this.productos[_i].nombre==this.seleccionada2){
-          this.producto2='Producto: '+this.productos[_i].nombre;
-          this.precio2='Precio Q: '+this.productos[_i].precio;
-          this.total=this.totalPedido(this.productos[_i].precio,this.cantidad);
-        }
-      }
-      
-      this.habitacion2='Habitacion: '+this.habitacion;
-      this.cantidad2='Cantidad: '+this.cantidad;
-      this.total2='Total Q: '+this.total;
-      if (this.notas!=null){
-        this.notas2='Detalles: '+this.notas;
-      }
-  
+      this.actualizarDatos();
     }else{
       alert('Debe ingresar habitacion y una cantidad');
     }
@@ -80,4 +66,24 @@ export class ServicioHabitacionComponent {
   totalPedido(valor1:number, valor2:number): number {
     return valor1*valor2;
   }
+
+  actualizarDatos(){
+    for (var _i = 0; _i < this.productos.length; _i++){
+      if (this.productos[_i].nombre==this.seleccionada2){
+        this.producto2='Producto: '+this.productos[_i].nombre;
+        this.precio2='Precio Q: '+this.productos[_i].precio;
+        this.total=this.totalPedido(this.productos[_i].precio,this.cantidad);
+      }
+    }
+    
+    this.habitacion2='Habitacion: '+this.habitacion;
+    this.cantidad2='Cantidad: '+this.cantidad;
+    this.total2='Total Q: '+this.total;
+    if (this.notas!=null){
+      this.notas2='Detalles: '+this.notas;
+    }
+    alert('Total de Q'+this.total);
+  }
+
+
 }
