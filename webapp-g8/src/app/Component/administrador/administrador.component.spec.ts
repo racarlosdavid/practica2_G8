@@ -94,6 +94,52 @@ describe('AdministradorComponent', () => {
     expect(component.res_tiempo).toContain('8');
     expect(component.res_costo).toContain('900');*/
   });
+  //SEGUNDA PARTE DE PRUEBAS
+  //-------------Prueba para Verifcamposllenos() .not.toBe()
+  it('Caso de prueba para: Verifcamposllenos(), se espera que no retorne verdadero', () =>
+  {
+    //Variable de prueba con el método
+    let tipouser = component.Verifcamposllenos('', '', '', '');
+
+    //Luego de la ejecución del método el tipouser debe cambiar sí o sí
+    expect(tipouser).not.toBe(true);
+  });
+  //-------------Prueba para Verifcamposllenos() .not.toBe()
+  it('Caso de prueba para: Verifcamposllenos(), se espera que no retorne falso', () =>
+  {
+    //Variable de prueba con el método
+    let tipouser = component.Verifcamposllenos('a', 'b', 'c', 'd');
+
+    //Luego de la ejecución del método el tipouser debe cambiar sí o sí
+    expect(tipouser).not.toBe(false);
+  });
+  //-------------Prueba para Verifnuser() .toBeGreatherThanOrEqual()
+  it('Caso de prueba para: Verifnuser(), se espera que retorne un número mayor o igual a 0', () =>
+  {    
+    //Ejecución del método
+    let mivar = component.Verifnuser('');
+
+    //Se espera que retorne un numero mayor o igual a 0
+    expect(mivar).toBeGreaterThanOrEqual(0)
+  });
+  //-------------Prueba para Verifcontra() .toBeLessThanOrEqual()
+  it('Caso de prueba para: Verifcontra(), se espera que retorne un número menor o igual a 3', () =>
+  {    
+    //Ejecución del método
+    let mivar = component.Verifcontra('a', 'b');
+
+    //Se espera que retorne un numero menor o igual a 3
+    expect(mivar).toBeLessThanOrEqual(3);
+  });
+  //-------------Prueba para deleteUser() .not.toContain()
+  it('Caso de prueba para: deleteUser(), se espera que el arreglo no contenga el dato de "Gabriel"', () => 
+  {
+    //Se prueba el componente con datos random
+    component.deleteUser('Amelia');
+
+    //Se espera que el arreglo contenga el dato ingresado
+    expect(component.res_id).not.toContain('Gabriel')
+  });
 });
 
 //Pruebas con Mocks

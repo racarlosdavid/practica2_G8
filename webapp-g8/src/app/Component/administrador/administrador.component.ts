@@ -108,18 +108,19 @@ export class AdministradorComponent implements OnInit {
 
       if(existe == true)
       {
-        for(let i = 0; i<this.res_id.length; i++)
-        {
-          if(vercliente.value != this.res_cliente[i])
-          {
-            this.res_id.splice(i, 1);
-            this.res_cliente.splice(i, 1);
-            this.res_numh.splice(i, 1);
-            this.res_tiempo.splice(i, 1);
-            this.res_costo.splice(i, 1);
-            i--;
-          }
-        }
+        // for(let i = 0; i<this.res_id.length; i++)
+        // {
+        //   if(vercliente.value != this.res_cliente[i])
+        //   {
+        //     this.res_id.splice(i, 1);
+        //     this.res_cliente.splice(i, 1);
+        //     this.res_numh.splice(i, 1);
+        //     this.res_tiempo.splice(i, 1);
+        //     this.res_costo.splice(i, 1);
+        //     i--;
+        //   }
+        // }
+        this.deleteUser(vercliente.value);
       }
       else
       {
@@ -175,5 +176,21 @@ export class AdministradorComponent implements OnInit {
       return 2;
     }
   };
+  //Función para borrar datos a los arreglos
+  deleteUser(nomcliente:string)
+  {
+    for(let i = 0; i<this.res_id.length; i++)
+    {
+      if(nomcliente != this.res_cliente[i])
+      {
+        this.res_id.splice(i, 1);
+        this.res_cliente.splice(i, 1);
+        this.res_numh.splice(i, 1);
+        this.res_tiempo.splice(i, 1);
+        this.res_costo.splice(i, 1);
+        i--;
+      }
+    }
+  }
 }
 
