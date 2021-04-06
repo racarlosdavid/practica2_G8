@@ -21,12 +21,6 @@ export class PagoOnlineComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  realizarPago(){
-    
-    console.log(this.procesarPago.total, this.procesarPago.nombreTitularTarjeta)
-
-  }
-
   aplicarDescuento(subTotal:number, descuento:number):number{
     return subTotal * (descuento/100);
   }
