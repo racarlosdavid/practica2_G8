@@ -36,7 +36,7 @@ export class Habitacion{
             return 1;
         }else if(estad.localeCompare("ocupado")===0){
             return 2;
-        }else if(estad.localeCompare("limpieza")){
+        }else if(estad.localeCompare("limpieza")===0){
             return 3;
         }else{
             return 0;

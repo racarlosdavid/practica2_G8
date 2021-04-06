@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, IterableDiffers, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 
 @Component({
@@ -19,19 +19,20 @@ export class CotizacionComponent {
   articuloselect: Articulo = new Articulo("", 0,0,0);
 
   @ViewChild(MatTable) tabla1: MatTable<Articulo>;
-
+  
+  
   borrarFila(cod: number) {
-    if (confirm("Realmente quiere borrarlo?")) {
+    if (this.confirmaBorrar()) {
       this.datos.splice(cod, 1);
-      this.tabla1.renderRows();
+      this.renderizarColumnas();
     }
   }
 
   agregar() {
     var verificar:boolean=this.verificarCampos(this.articuloselect.nombre,this.articuloselect.precio,this.articuloselect.cantidad);
     if (verificar){
-      this.datos.push(new Articulo(this.articuloselect.nombre, this.articuloselect.precio, this.articuloselect.cantidad, this.calcularsubTotal(this.articuloselect.precio, this.articuloselect.cantidad)));
-      this.tabla1.renderRows();
+      this.datos.push(this.crearArticulo(this.articuloselect.nombre, this.articuloselect.precio, this.articuloselect.cantidad, this.calcularsubTotal(this.articuloselect.precio, this.articuloselect.cantidad)));
+      this.renderizarColumnas();
       this.articuloselect = new Articulo("", 0,0,0);  
     }else{
       alert('Debe llenar todos los campos');
@@ -64,6 +65,17 @@ export class CotizacionComponent {
     return resultado;
   }
 
+  crearArticulo(a1:string,a2:number,a3:number,a4:number):Articulo{
+    return new Articulo(a1,a2,a3,a4);
+  }
+
+  renderizarColumnas(){
+    this.tabla1.renderRows();
+  }
+
+  confirmaBorrar():boolean{
+    return confirm("Realmente quiere borrarlo?");    
+  }
 
 }
 
