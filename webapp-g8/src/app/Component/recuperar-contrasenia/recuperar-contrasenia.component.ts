@@ -7,16 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecuperarContraseniaComponent implements OnInit {
 
-  usermail: "";
+  usermail = '';
   constructor() { }
 
   validarCorreo(correo:string):number{
     var res = correo.match('^[^@]+@[^@]+\.[a-zA-Z]{2,}$');
-    console.log(res+" "+res.length);
     
-    if ( res != null && res.length > 0 ) 
-      return res.length;
-    return 0;
+    if (res == null) {
+      return 0;
+    } else {
+      if ( res.length > 0 ) {
+        return res.length;
+      }
+    }  
   }
 
   validadCampoVacio(email:string):boolean{

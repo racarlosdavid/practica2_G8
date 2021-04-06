@@ -23,38 +23,21 @@ export class RegistroUsuarioComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
-  setUser(Usu:user){
-    this.usuario = Usu;
-  }
-
-  registrarUsuario(){
-    console.log("El usuario ", this.usuario.nombre," se ha registrado con exito")
-  }
-
+ 
   validarCorreo():number{
     console.log("Validar el correo -> ",this.usuario.correo)
     var res = this.usuario.correo.match('^[^@]+@[^@]+\.[a-zA-Z]{2,}$');
-    console.log(res+" "+res.length);
-    
+   
     if ( res != null && res.length > 0 ) 
       return res.length;
     return 0;
   }
 
-  validadCampoVacio(email:string):boolean{
-    if(email != undefined){
-      return false;
-    }else {
-      return true;
-    }
-  }
-
   comprobarNingunCampoVacio():boolean{
-    var bandera = true;
-    if(this.usuario.cui == undefined || this.usuario.nombre  == undefined || this.usuario.apellido  == undefined 
-      || this.usuario.fecha_nacimiento  == undefined || this.usuario.correo  == undefined || this.usuario.correo  == undefined ){
-      bandera = false;
+    console.log("Data user ",this.usuario)
+    var bandera = false;
+    if(this.usuario.cui != undefined && this.usuario.nombre  != '' && this.usuario.apellido  != '' && this.usuario.fecha_nacimiento  != null && this.usuario.correo  != '' && this.usuario.contrasenia  != '' ){
+      bandera = true;
     }
     return bandera;
   }
@@ -66,7 +49,7 @@ export class RegistroUsuarioComponent implements OnInit {
   comprobarCUIesNumero(){
     console.log("Validar el cui -> ",this.usuario.cui)
     if (isNaN(this.usuario.cui)) {
-      this.elCUIesNumero = false;
+    
     }else{
       this.elCUIesNumero = true;
     }
