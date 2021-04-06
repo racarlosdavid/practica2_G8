@@ -101,6 +101,12 @@ describe('Logindev2Component', () => {
   {
     expect(component.Verifadmi('admin', '1234')).toBeTruthy();
   });
+  //SEGUNDA PARTE DE PRUEBAS
+  //-------------Prueba para Verifadmi() not.toBeThruty
+  it('Caso de prueba para Verifadmi(), se espera no recibir true', () => 
+  {
+    expect(component.Verifadmi('admin', '1')).not.toBeTruthy();
+  });
 });
 
 //Pruebas con Mocks
@@ -225,5 +231,18 @@ describe('Logindev2Component - Router', () => {
     component.Capturadatos('usertest', '1234');
 
     expect(routerSpy).toHaveBeenCalledWith(['/userpg']);
+  });
+  //-------------Prueba para IraRegistrarUsuario() .toHaveBeenCalledWith
+  it('Prueba para: IraRegistrarUsuario(), se espera que router redireccione a "/registrarUsuario"', () => 
+  {
+    //Se llama una instancia de nuestro componente
+    const component = fixture.componentInstance;
+    //Objeto espía para nuestro objeto router.navigate
+    const routerSpy = spyOn(router, 'navigate');
+
+    //Condiciones para que nuestro código llegue al router.navigate
+    component.IraRegistrarUsuario();
+
+    expect(routerSpy).toHaveBeenCalledWith(['/registrarUsuario']);
   });
 });

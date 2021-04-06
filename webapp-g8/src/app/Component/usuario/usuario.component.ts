@@ -26,9 +26,9 @@ export class UsuarioComponent implements OnInit {
         this.cont.push(newContra.value);
         
         //Limpiar el input
-        newName.value = '';
-        newCorreo.value = '';
-        newContra.value = '';
+        //newName.value = '';
+        //newCorreo.value = '';
+        //newContra.value = '';
 
         //Para que no se refresque la página
         return false
