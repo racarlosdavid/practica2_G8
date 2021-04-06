@@ -26,8 +26,13 @@ describe('PagoOnlineComponent', () => {
   it('Calcular el total por una habitcion de 700 por 2 noches, se espera 1400', () => {
     expect(component.calcularTotal(700,2)).toEqual(1400);
   });
+  
 
   it('Varificar que el codigo 700 es valido ya que debe contener 3 digitos, se espera true', () => {
-    expect(component.validarCodigoCVV(700)).toBeTrue();
+    expect(component.validarCodigoCVV(700)).toBeTruthy();
+  });
+
+  it('Varificar que el codigo 7001 es valido ya que debe contener 3 digitos, se espera false', () => {
+    expect(component.validarCodigoCVV(7001)).toBeFalsy();
   });
 });
